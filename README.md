@@ -21,9 +21,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![İSPARK Screen Shot][product-screenshot]]
-
 This application created by using İspark [data set](https://data.ibb.gov.tr/dataset/ispark-otopark-listesi-web-servisi) which is published by İBB. It helps users to find the İspark parking lots in İstanbul.
+
+![İSPARK Screen Shot][product-screenshot]
+
+
 
 ### Built With
 
@@ -76,4 +78,4 @@ Distributed under the Apache License. See `LICENSE` for more information.
 [license-url]: https://github.com/melisaBeysumengu/ispark/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/melisabeysumengu/
-[product-screenshot]: images/record.gif
+[product-screenshot]: images/record2.gif
