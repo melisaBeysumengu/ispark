@@ -13,7 +13,6 @@ class _HomeState extends State<Home> {
 
   Map data = {};
   MapController _mapctl = MapController();
-
   @override
   Widget build(BuildContext context) {
 
@@ -59,13 +58,14 @@ class _HomeState extends State<Home> {
                         child: FlutterMap(
                           mapController: _mapctl,
                           options: MapOptions(
+                            maxZoom: 18,
                             center: LatLng(double.parse(data["lat"]), double.parse(data["lng"])),
-                            zoom: 17.0,
+                            zoom: 15.0,
                           ),
                           layers: [
                             TileLayerOptions(
-                                urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                                subdomains: ['a', 'b', 'c']
+                              urlTemplate: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                              subdomains: ['a', 'b', 'c'],
                             ),
                             MarkerLayerOptions(
                               markers: [
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                               "areaPolygon": result["areaPolygon"],
                             };
                             _mapctl.onReady.then((result) {
-                              _mapctl.move(LatLng(double.parse(data["lat"]), double.parse(data["lng"])), 17.0);
+                              _mapctl.move(LatLng(double.parse(data["lat"]), double.parse(data["lng"])), 15.0);
                             });
 
                             });

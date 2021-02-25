@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:ispark/services/park.dart';
 import 'package:latlong/latlong.dart';
 
@@ -46,8 +45,6 @@ class _ChooseLocationState extends State<ChooseLocation> {
   @override
   Widget build(BuildContext context) {
 
-    MapController _mapctl = MapController();
-
     locations = locations.isNotEmpty ? locations : ModalRoute.of(context).settings.arguments;
 
     if(locations.isNotEmpty){
@@ -55,9 +52,19 @@ class _ChooseLocationState extends State<ChooseLocation> {
         if(!(locations[i] == null)){
           markers.add(Marker(anchorPos: AnchorPos.align(AnchorAlign.center),
             height: 80,
-            width: 80,
+            width: 200,
             point: LatLng(double.parse(locations[i].lat),double.parse(locations[i].lng)),
-            builder: (ctx) => Icon(Icons.pin_drop, color: Colors.red,),));
+            builder: (ctx) => Container(
+              child: Column(
+                children: [
+                  Expanded(child: Center(child: Container(decoration: BoxDecoration(color: Colors.indigo[200],borderRadius: BorderRadius.all(Radius.circular(30))),child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(locations[i].parkName, textAlign: TextAlign.center,),
+                  )))),
+                  Icon(Icons.pin_drop, color: Colors.red, size: 20,),
+                ],
+              ),
+            ),),);
         }
       }
     }
@@ -100,6 +107,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
               padding: const EdgeInsets.all(10.0),
               child: FlutterMap(
                 options: new MapOptions(
+                  maxZoom: 18,
                   center: LatLng(double.parse(locations[0].lat),double.parse(locations[0].lng)),
                   plugins: [
                     MarkerClusterPlugin(),
@@ -111,7 +119,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
                     subdomains: ['a', 'b', 'c'],
                   ),
                   MarkerClusterLayerOptions(
-                    maxClusterRadius: 120,
+                    maxClusterRadius: 100,
                     size: Size(40, 40),
                     fitBoundsOptions: FitBoundsOptions(
                       padding: EdgeInsets.all(50),

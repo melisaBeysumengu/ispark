@@ -10,6 +10,7 @@
   <ol>
     <li><a href="#about-the-project">About The Project</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
@@ -44,6 +45,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+##Usage
+
+* Clone the project in your repository.
+* Open it with Android Studio.
+* Enable dart plugin for the project.
+* Type `pub get` to get the dependencies.
+* Create a device from the AVD Manager.
+* Select the device you created from Flutter Device Selection.
+* Run the project.
 
 <!-- USAGE EXAMPLES -->
 ## License

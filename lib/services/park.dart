@@ -59,24 +59,6 @@ class Park {
       updateDate = data["updateDate"];
       monthlyFee = data["monthlyFee"].toString();
       tariff = data["tariff"];
-      //areaPolygon = data["areaPolygon"];
-      /*for(int i = 0; i < data.length; i++){
-        print(data[i].toString());
-        if(data[i].toString().split(":")[0].replaceAll(" ", "") == "updateDate"){
-          updateDate = data[i].toString().split(":")[1]+":"+data[i].toString().split(":")[2]+":"+data[i].toString().split(":")[3];
-        }
-        if(data[i].toString().split(":")[0].replaceAll(" ", "") == "monthlyFee"){
-          monthlyFee = data[i].toString().split(":")[1];
-        }
-        if(data[i].toString().split(":")[0].replaceAll(" ", "") == "tariff"){
-          String st = "";
-          while(!(data[i].toString().split(":")[0].replaceAll(" ", "") == "district")){
-            st += data[i].toString()+',';
-            i++;
-          }
-          tariff = st.substring(9, st.length-1).replaceAll("  ", " ").split(";");
-        }
-      }*/
     }
     catch(e){
       print("caught error: $e");
